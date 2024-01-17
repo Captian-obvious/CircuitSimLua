@@ -17,6 +17,11 @@ function cs.loadScript(self,path,onsuc,onerr)
         local suc,res=pcall(function()
             return require(path)
         end)
+        if (suc==true) then
+            if (onsuc) then onsuc(res) end
+        else
+            if (onerr) then onerr(res) end
+        end
     end
 end
 
