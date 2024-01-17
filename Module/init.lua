@@ -1,5 +1,7 @@
 local cs={
     isInitialized=false,
+    cHandlerLoadAutoRetried=false,
+    sRulesLoadAutoRetried=false,
 }
 
 function cs.Init(self)
@@ -20,6 +22,7 @@ function cs.onComponentHandlerLoaded(self)
 end
 
 function cs.onComponentHandlerLoadError(self)
+    print('component_handler_load_error')
     
 end
 
