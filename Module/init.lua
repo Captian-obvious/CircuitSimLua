@@ -21,10 +21,13 @@ function cs.onComponentHandlerLoaded(self)
     self.deps.component:Init()
 end
 
-function cs.onComponentHandlerLoadError(self)
+function cs.onComponentHandlerLoadError(self,err)
     print('component_handler_load_error')
-    if self.cHandlerLoadAutoRetried~=true then
-        
+    if (self.cHandlerLoadAutoRetried~=true) then
+        self.cHandlerLoadAutoRetried=true
+        self:loadComponentHandler()
+    else
+        print('Unable to load dependency componentHandler due to exception: '..err)
     end
 end
 
