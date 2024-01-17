@@ -8,4 +8,8 @@ function cs.Init(self)
     end
 end
 
+function cs.loadDependencies(self)
+    
+end
+
 return cs
