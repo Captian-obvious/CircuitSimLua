@@ -33,7 +33,7 @@ end
 
 function cs.loadComponentHandler(self)
     if (self.deps.component==nil) then
-        self.deps.component=self.loadScript(script.Component,bindFn(self.onComponentHandlerLoaded),bindFn(self.onComponentHandlerLoadError))
+        self.deps.component=self:loadScript(script.Component,bindFn(self.onComponentHandlerLoaded,self),bindFn(self.onComponentHandlerLoadError,self))
     end
 end
 
