@@ -14,6 +14,15 @@ function cs.loadDependencies(self)
     end
 end
 
+function cs.onComponentHandlerLoaded(self)
+    print('component_handler_loaded')
+    self.deps.component:Init()
+end
+
+function cs.onComponentHandlerLoadError(self)
+    
+end
+
 function cs.loadScript(self,path,onsuc,onerr)
     if (path~=nil) then
         local suc,res=pcall(function()
