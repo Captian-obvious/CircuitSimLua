@@ -43,7 +43,8 @@ function cs.loadScript(self,path,onsuc,onerr)
             return require(path)
         end)
         if (suc==true) then
-            if (onsuc) then onsuc(res) end
+            if (onsuc) then onsuc() end
+            return res
         else
             if (onerr) then onerr(res) end
         end
