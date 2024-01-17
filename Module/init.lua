@@ -9,7 +9,9 @@ function cs.Init(self)
 end
 
 function cs.loadDependencies(self)
-    
+    if (self.deps~=nil) then
+        
+    end
 end
 
 function cs.loadScript(self,path,onsuc,onerr)
