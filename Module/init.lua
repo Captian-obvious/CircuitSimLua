@@ -2,9 +2,9 @@ local cs={
     isInitialized=false,
 }
 
-function cs:Init()
-    if (cs.isInitialized~=true) then
-        cs.isInitialized=true
+function cs.Init(self)
+    if (self.isInitialized~=true) then
+        self.isInitialized=true
     end
 end
 
