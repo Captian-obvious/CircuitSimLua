@@ -31,6 +31,12 @@ function cs.onComponentHandlerLoadError(self,err)
     end
 end
 
+function cs.loadComponentHandler(self)
+    if (self.deps.component==nil) then
+        self.deps.component=self.loadScript(script.Component,bindFn(self.onComponentHandlerLoaded),bindFn(self.onComponentHandlerLoadError))
+    end
+end
+
 function cs.loadScript(self,path,onsuc,onerr)
     if (path~=nil) then
         local suc,res=pcall(function()
