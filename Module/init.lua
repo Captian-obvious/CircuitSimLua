@@ -23,7 +23,9 @@ end
 
 function cs.onComponentHandlerLoadError(self)
     print('component_handler_load_error')
-    
+    if self.cHandlerLoadAutoRetried~=true then
+        
+    end
 end
 
 function cs.loadScript(self,path,onsuc,onerr)
